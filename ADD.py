@@ -10,4 +10,6 @@ def add_book():
  }
 
     books.append(book)
-print ("Book Added Successfully!")
+print ("Name: Fifty Shades of Grey")
+print ("Genre: Romance")
+print ("Year: 2011")
