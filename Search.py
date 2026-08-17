@@ -1,42 +1,51 @@
-def search_Book(book_list, item_to_find):
-    if item_to_find in book_list:
+def search_book(books):
+    search = input("Enter the book name: ").lower()
 
+    found = False
+
+    for book in books.values():
+        if book["name"].lower() == search:
+            print("\n The book has been found!")
+            print(f"Name: {book['name']}")
+            print(f"Genre: {book['genre']}")
+            print(f"Year: {book['year']}")
+            found = True
+
+    if not found:
+        print("Book was not found.")
+
+
+def search_genre(books):
+    search = input("Enter the book genre: ").lower()
+
+    found = False
+
+    for book in books.values():
+        if book["genre"].lower() == search:
+            print("\n The book has been found!")
+            print(f"Name:{book['name']}")
+            print(f"Genre:{book['genre']}")
+            print(f"Year:{book['year']}")
+            found = True
     
-        return f"{item_to_find} is found"
-       
+    if not found:
+        print("Book was not found.")
 
-    else:
-        return f"{item_to_find} was not found."
 
+def search_year(books):
+    search = input("Enter the book publication year ").lower()
+
+    found = False
+
+    for book in books.values():
+        if book["year"].lower() == search:
+            print("\n The book has been found!")
+            print(f"Name:{book['name']}")
+            print(f"Genre:{book['genre']}")
+            print(f"Year:{book['year']}")
+            found = True
     
-def search_Genre(genre_list, item_to_find):
-    if item_to_find in genre_list:
+    if not found:
+        print("Book was not found.")
 
-    
-        return f"{item_to_find} is found"
-       
-
-    else:
-        return f"{item_to_find} was not found."
-
-
-def search_Year(year_list, item_to_find):
-    if item_to_find in year_list:
-
-    
-        return f"{item_to_find} is found"
-       
-
-    else:
-        return f"{item_to_find} was not found."
-
-
-def search();
-  if 
-  print("Enter the name of the book: ")
-  Search = input()
-
-  
-
-books = ["The Odyssey","Harry Potter","1987"]
-print(search_Book,search_Genre,search_Year,(Search))  
+ 
