@@ -1,17 +1,18 @@
-books = [
-    "Punisher Max: In the Beginning", 
-    "Captain America: The Winter Soldier", 
-    "Black Widow: The Name of the Rose"
-    ]
+books = {
+    1: "Punisher Max: In the Beginning",
+    2: "Captain America: The Winter Soldier",
+    3: "Black Widow: The Name of the Rose"
+}
 
-print("Current books:", books)
+for n, book in books.items():
+    print(n, book)
 
-to_remove = input("Enter item to delete: ")
+choice = int(input("Delete book number: "))
 
-if to_remove in books:
-    books.remove(to_remove)
-    print("Item deleted!")
+if choice in books:
+    del books[choice]
+    print("Book deleted!")
 else:
-    print("Item not found!")
+    print("Book not found!")
 
-print("Updated books:", books)
+print(books)
