@@ -33,6 +33,28 @@ def Edit():
     print("2. Edit book genre")
     print("3. Edit book year")
 
+    num = int(input("Enter your choice: "))
+
+    if num == 1:
+        new_name = input("Enter new book name: ")
+        Books[book]["Name"] = new_name
+
+    elif num == 2:
+        new_genre = input("Enter new book genre: ")
+        Books[book]["Genre"] = new_genre
+
+    elif num == 3:
+        new_year = int(input("Enter new book year: "))
+        Books[book]["year"] = new_year
+
+    else:
+        print("Invalid choice.")
+        return
+
+    print("\nBook successfully updated!")
+    print(Books[book])
+
+
 while True:
     Edit()
     break
