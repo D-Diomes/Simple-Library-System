@@ -21,12 +21,10 @@ def Edit():
     print("2. Edit book genre")
     print("3. Edit book year")
 
-    if num = 1:
-        print
 
 
 
 
 while True:
-    (Edit)
+    Edit()
     break
