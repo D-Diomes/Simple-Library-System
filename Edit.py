@@ -1,60 +1,33 @@
-Books = {
-    "book1": {
-        "Name": "Punisher Max: In the Beginning",
-        "Genre": "Crime",
-        "year": 2004
-    },
-    "book2": {
-        "Name": "Captain America: The Winter Soldier",
-        "Genre": "Adventure",
-        "year": 2005
-    },
-    "book3": {
-        "Name": "Black Widow: The Name of the Rose",
-        "Genre": "Action",
-        "year": 2010
-    }
-}
+def edit_book(books):
+    search = input("Enter the name of the book you want to edit: ").lower()
 
+    found = False
 
-def Edit():
-    print("Available books:")
-    for book in Books:
-        print(book)
+    for book in books.values():
+        if book["name"].lower() == search:
 
-    book = input("Enter the book you want to edit: ")
+            print("\n===== CURRENT BOOK =====")
+            print(f"Name: {book['name']}")
+            print(f"Genre: {book['genre']}")
+            print(f"Year: {book['year']}")
 
-    if book not in Books:
-        print("Book not found.")
-        return
+            print("\n===== EDIT BOOK =====")
 
-    print("\nWhat do you want to edit?")
-    print("1. Edit book name")
-    print("2. Edit book genre")
-    print("3. Edit book year")
+            new_name = input("Enter the new book name: ")
+            new_genre = input("Enter the new genre: ")
+            new_year = int(input("Enter the new publication year: "))
 
-    num = int(input("Enter your choice: "))
+            book["name"] = new_name
+            book["genre"] = new_genre
+            book["year"] = new_year
 
-    if num == 1:
-        new_name = input("Enter new book name: ")
-        Books[book]["Name"] = new_name
+            print("\nBook has been updated!")
+            print(f"Name: {book['name']}")
+            print(f"Genre: {book['genre']}")
+            print(f"Year: {book['year']}")
 
-    elif num == 2:
-        new_genre = input("Enter new book genre: ")
-        Books[book]["Genre"] = new_genre
+            found = True
+            break
 
-    elif num == 3:
-        new_year = int(input("Enter new book year: "))
-        Books[book]["year"] = new_year
-
-    else:
-        print("Invalid choice.")
-        return
-
-    print("\nBook successfully updated!")
-    print(Books[book])
-
-
-while True:
-    Edit()
-    break
+    if not found:
+        print("Book was not found.")
