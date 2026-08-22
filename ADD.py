@@ -1,15 +1,20 @@
-books = []
+def add_book(books):
+    print("\n===== ADD BOOK =====")
 
-def add_book():
-    title = input ("Enter book title:")
-    author = input ("Enter author name:")
+    name = input("Enter the book name: ")
+    genre = input("Enter the book genre: ")
+    year = int(input("Enter the publication year: "))
 
-    book = {
-    "title": title,
-     "author": author   
- }
+    book_number = len(books) + 1
+    book_id = f"book{book_number}"
 
-    books.append(book)
-print ("Name: Fifty Shades of Grey")
-print ("Genre: Romance")
-print ("Year: 2011")
+    books[book_id] = {
+        "name": name,
+        "genre": genre,
+        "year": year
+    }
+
+    print("\nBook has been added!")
+    print(f"Name: {name}")
+    print(f"Genre: {genre}")
+    print(f"Year: {year}")
