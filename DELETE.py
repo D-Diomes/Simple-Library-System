@@ -1,18 +1,25 @@
-books = {
-    1: "Punisher Max: In the Beginning",
-    2: "Captain America: The Winter Soldier",
-    3: "Black Widow: The Name of the Rose"
-}
+def delete_book(books):
+    search = input("Enter the name of the book you want to delete: ").lower()
 
-for n, book in books.items():
-    print(n, book)
+    found = False
 
-choice = int(input("Delete book number: "))
+    for book_id, book in list(books.items()):
+        if book["name"].lower() == search:
+            print("\n===== BOOK FOUND =====")
+            print(f"Name: {book['name']}")
+            print(f"Genre: {book['genre']}")
+            print(f"Year: {book['year']}")
 
-if choice in books:
-    del books[choice]
-    print("Book deleted!")
-else:
-    print("Book not found!")
+            confirm = input("\nAre you sure you want to delete this book? (yes/no): ").lower()
 
-print(books)
+            if confirm == "yes":
+                del books[book_id]
+                print("\nBook has been deleted!")
+            else:
+                print("\nBook was not deleted.")
+
+            found = True
+            break
+
+    if not found:
+        print("Book was not found.")
